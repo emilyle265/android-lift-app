@@ -16,9 +16,13 @@ import android.view.View;
 
 import com.androidtutorialshub.loginregister.R;
 import com.androidtutorialshub.loginregister.adapters.UsersRecyclerAdapter;
+import com.androidtutorialshub.loginregister.helpers.InputValidation;
 import com.androidtutorialshub.loginregister.model.User;
 import com.androidtutorialshub.loginregister.model.UserWeight;
 import com.androidtutorialshub.loginregister.sql.DatabaseHelper;
+
+import static com.androidtutorialshub.loginregister.R.id.appCompatButtonLogin;
+import static com.androidtutorialshub.loginregister.R.id.textViewLinkRegister;
 
 /**
  * Created by Emily on 7/17/17.
@@ -38,7 +42,7 @@ public class UsersLiftsActivity extends AppCompatActivity implements View.OnClic
     private TextInputEditText textInputEditTextDeadlift;
     private TextInputEditText textInputEditTextOverheadpress;
 
-    private AppCompatButton appCompatButtonLogin;
+    private AppCompatButton appCompatButton;
 
     private DatabaseHelper databaseHelper;
     private User user;
@@ -53,7 +57,23 @@ public class UsersLiftsActivity extends AppCompatActivity implements View.OnClic
         getSupportActionBar().hide();
 
         initViews();
+        initListeners();
+        initObjects();
+
     }
+
+
+    private void initObjects() {
+        databaseHelper = new DatabaseHelper(activity);
+    }
+
+    /**
+     * This method is to initialize listeners
+     */
+    private void initListeners() {
+        appCompatButton.setOnClickListener(this);
+    }
+
 
     /**
      * This method is to initialize views
@@ -75,7 +95,7 @@ public class UsersLiftsActivity extends AppCompatActivity implements View.OnClic
         textInputEditTextOverheadpress = (TextInputEditText) findViewById(R.id.textInputEditTextOverheadpress);
 
         // Changed the name from appCompatButtonLogin to appCompatButton
-        appCompatButtonLogin = (AppCompatButton) findViewById(R.id.appCompatButtonLogin);
+        appCompatButton = (AppCompatButton) findViewById(R.id.appCompatButton);
 
 
     }
