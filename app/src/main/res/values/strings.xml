@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login Register</string>
+    <string name="app_name">doyouevenlift</string>
     <string name="text_accounts">All Accounts</string>
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>
@@ -26,4 +26,5 @@
     <string name="deadlift">Deadlift</string>
     <string name="overheadpress">Overheadpress</string>
     <string name="submit">Submit</string>
+
 </resources>
